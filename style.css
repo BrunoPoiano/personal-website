@@ -24,10 +24,10 @@ html {
   /* Main Primary color */
   --base-color: hsl(0, 4%, 15%);
   --mix-color: rgb(255, 255, 255);
-  --accent-color-pure: #1b7fdd;
-  --attention-color-pure: rgb(231, 16, 16);
+  --accent-color-pure: oklch(59.22% 0.167 252.34);
+  --attention-color-pure: oklch(58.66% 0.235 28.72);
 
-  --accent-color-05: color-mix(in oklab, var(--base-color) 5%, var(--mix-color));
+  --accent-color-05: color-mix(in oklab, var(--base-color) 5%, var(--accent-color-pure));
   --accent-color-10: color-mix(in oklab, var(--base-color) 10%, var(--accent-color-pure));
   --accent-color-20: color-mix(in oklab, var(--base-color) 20%, var(--accent-color-pure));
   --accent-color-30: color-mix(in oklab, var(--base-color) 30%, var(--accent-color-pure));
@@ -38,14 +38,33 @@ html {
   --accent-color-80: color-mix(in oklab, var(--base-color) 80%, var(--accent-color-pure));
   --accent-color-90: color-mix(in oklab, var(--base-color) 90%, var(--accent-color-pure));
 
+  --accent-soft-color-05: color-mix(in oklab, var(--mix-color) 5%, var(--mix-color));
+  --accent-soft-color-10: color-mix(in oklab, var(--mix-color) 10%, var(--accent-color-pure));
+  --accent-soft-color-20: color-mix(in oklab, var(--mix-color) 20%, var(--accent-color-pure));
+  --accent-soft-color-30: color-mix(in oklab, var(--mix-color) 30%, var(--accent-color-pure));
+  --accent-soft-color-40: color-mix(in oklab, var(--mix-color) 40%, var(--accent-color-pure));
+  --accent-soft-color-50: color-mix(in oklab, var(--mix-color) 50%, var(--accent-color-pure));
+  --accent-soft-color-60: color-mix(in oklab, var(--mix-color) 60%, var(--accent-color-pure));
+  --accent-soft-color-70: color-mix(in oklab, var(--mix-color) 70%, var(--accent-color-pure));
+  --accent-soft-color-80: color-mix(in oklab, var(--mix-color) 80%, var(--accent-color-pure));
+  --accent-soft-color-90: color-mix(in oklab, var(--mix-color) 90%, var(--accent-color-pure));
+
   --neutral-color-10: color-mix(in oklab, var(--base-color) 10%, var(--mix-color));
+  --neutral-color-15: color-mix(in oklab, var(--base-color) 15%, var(--mix-color));
   --neutral-color-20: color-mix(in oklab, var(--base-color) 20%, var(--mix-color));
+  --neutral-color-25: color-mix(in oklab, var(--base-color) 25%, var(--mix-color));
   --neutral-color-30: color-mix(in oklab, var(--base-color) 30%, var(--mix-color));
+  --neutral-color-35: color-mix(in oklab, var(--base-color) 35%, var(--mix-color));
   --neutral-color-40: color-mix(in oklab, var(--base-color) 40%, var(--mix-color));
+  --neutral-color-45: color-mix(in oklab, var(--base-color) 45%, var(--mix-color));
   --neutral-color-50: color-mix(in oklab, var(--base-color) 50%, var(--mix-color));
+  --neutral-color-55: color-mix(in oklab, var(--base-color) 55%, var(--mix-color));
   --neutral-color-60: color-mix(in oklab, var(--base-color) 60%, var(--mix-color));
+  --neutral-color-65: color-mix(in oklab, var(--base-color) 65%, var(--mix-color));
   --neutral-color-70: color-mix(in oklab, var(--base-color) 70%, var(--mix-color));
+  --neutral-color-75: color-mix(in oklab, var(--base-color) 75%, var(--mix-color));
   --neutral-color-80: color-mix(in oklab, var(--base-color) 80%, var(--mix-color));
+  --neutral-color-85: color-mix(in oklab, var(--base-color) 85%, var(--mix-color));
   --neutral-color-90: color-mix(in oklab, var(--base-color) 90%, var(--mix-color));
   --neutral-color-95: color-mix(in oklab, var(--base-color) 95%, var(--mix-color));
   --neutral-color-100: color-mix(in oklab, var(--base-color) 100%, var(--mix-color));
@@ -81,9 +100,11 @@ html {
   --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
   --border-radius: 10px;
-
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+  --about-me-background: var(--neutral-color-90);
+  --skills-background: var(--neutral-color-85);
+  --contact-background: var(--neutral-color-80);
 }
 
 .accent {
@@ -110,8 +131,6 @@ body {
 
 .main-grid,
 .full-width {
-
-
   --padding-inline: 1rem;
   --center-max-width: 900px;
   --breakout-max-width: 1200px;
@@ -146,7 +165,6 @@ body {
   top: 0;
   z-index: 10;
 
-  margin-bottom: 30px;
 
   & .nav-content {
     display: flex;
@@ -320,7 +338,6 @@ body {
   transform: scale(1);
 }
 
-
 section {
   margin-bottom: 5em;
   display: flex;
@@ -436,6 +453,10 @@ img {
 
 .about-me {
 
+  padding-block: 2rem 2rem;
+  margin-block: 0;
+
+  background-color: var(--about-me-background);
   & .description {
     & h2 {
       font-size: var(--font-size-lg);
@@ -447,7 +468,16 @@ img {
 
 .skills {
 
-  background: linear-gradient(to bottom, var(--neutral-color-95), var(--neutral-color-90), var(--neutral-color-80) 35%, var(--neutral-color-90), var(--neutral-color-95));
+  &[data-background='true'] {
+    background: linear-gradient(to bottom, var(--neutral-color-95), var(--neutral-color-90), var(--neutral-color-80) 35%, var(--neutral-color-90), var(--neutral-color-95));
+  }
+
+  &[data-skill-wave='true'] {
+    margin: 0;
+  }
+
+
+  background-color: var(--skills-background);
 
   & h1 {
     z-index: 1;
@@ -508,7 +538,7 @@ img {
       }
 
       & i {
-        color: var(--accent-color-05);
+        color: var(--accent-soft-color-05);
         font-size: var(--font-size-lg);
         position: relative;
         place-self: center;
@@ -565,7 +595,93 @@ img {
   }
 }
 
+.blob {
+  position: relative;
+  background-color: var(--neutral-color-95);
+  height: 5rem;
+  margin: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 74% 26% 100% 0% / 69% 100% 0% 31%;
+    background: var(--attention-color-80);
+  }
+}
+
+.wave-wrapper {
+
+  height: 165px;
+  margin: 0;
+
+  position: relative;
+
+  & .wave-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    display: flex;
+  }
+
+  & .wave-border svg {
+    position: relative;
+    display: block;
+    width: calc(102% + 1.3px);
+    height: 167px;
+  }
+
+  & .wave-border .shape-fill {
+    fill: var(--contact-background);
+  }
+
+  &[data-skill-wave='true'] {
+
+    margin: 0;
+
+    & .wave-border svg {
+      background-color: var(--about-me-background)
+    }
+
+    & .wave-border .shape-fill {
+      fill: var(--skills-background)
+    }
+  }
+
+  &[data-contact-wave='true'] {
+
+    & .wave-border svg {
+      background-color: var(--skills-background)
+    }
+
+    & .wave-border .shape-fill {
+      fill: var(--contact-background)
+    }
+
+  }
+
+  &[invert='true'] {
+
+    & .wave-border .shape-fill {
+      fill: var(--skills-background);
+    }
+
+    & .wave-border svg {
+      rotate: 180deg;
+
+      background-color: var(--contact-background);
+
+    }
+  }
+}
+
 .contact {
+  margin-bottom: 0;
+  padding-bottom: 3rem;
+  background-color: var(--contact-background);
 
   & h3 {
     margin-bottom: 2rem;
@@ -593,7 +709,7 @@ img {
         transition: all 500ms ease;
         transform: translateY(10%);
 
-     
+
 
         &:hover {
           transform: translateY(0%);
@@ -671,18 +787,25 @@ img {
 
     }
   }
-
 }
 
 .color-pallete {
   width: 100%;
-  display: flex;
+  display: grid;
   gap: 5px;
+  margin-top: 3rem;
+
+  & .neutral,
+  .attention,
+  .accent {
+    display: flex;
+  }
 
   & .color {
     width: 50px;
     height: 50px;
     transition: all 1000ms ease;
+    cursor: pointer;
 
     &:hover {
       transform: scale(1.5);
@@ -690,14 +813,14 @@ img {
   }
 }
 
-.footer{
+.footer {
   background-color: var(--neutral-color-100);
   place-items: center;
   color: var(--neutral-color-10);
 
   padding-block: 2rem;
 
-  & .center{
+  & .center {
     display: grid;
     place-items: center;
   }
