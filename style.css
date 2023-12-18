@@ -457,6 +457,7 @@ img {
   margin-block: 0;
 
   background-color: var(--about-me-background);
+
   & .description {
     & h2 {
       font-size: var(--font-size-lg);
@@ -612,7 +613,6 @@ img {
 
 .wave-wrapper {
 
-  height: 165px;
   margin: 0;
 
   position: relative;
@@ -625,6 +625,8 @@ img {
     overflow: hidden;
     line-height: 0;
     display: flex;
+
+
   }
 
   & .wave-border svg {
@@ -673,7 +675,33 @@ img {
       rotate: 180deg;
 
       background-color: var(--contact-background);
+    }
+  }
 
+  & .desktop {
+    width: 100%;
+    display: block;
+
+    @media screen and (width < 650px) {
+      display: none;
+    }
+  }
+
+  & .mobile {
+    width: 100%;
+    display: none;
+
+    @media screen and (width < 650px) {
+      display: block;
+
+      & svg {
+        rotate: 180deg;
+      }
+
+      &[invert='true'] {
+        rotate: 180deg;
+
+      }
     }
   }
 }
@@ -698,7 +726,7 @@ img {
       max-width: 300px;
       width: 100%;
       border-radius: 100%;
-
+      z-index: 1;
       box-shadow: 0 10px 30px 5px var(--base-color);
 
       @media screen and (width < 500px) {
