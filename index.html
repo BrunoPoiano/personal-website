@@ -12,25 +12,32 @@
 
 <body>
   <main class="main-grid">
-    <section class="content hero" id="home">
-      <h1>
-        I'm <span class="attention my-name">
-          Bruno H. Poiano <i class="fa-duotone fa-gauge-min"></i>
-        </span>
-        <br>
-        A Full-stack Web Developer
-        <br>
-        <span class="secondary">
-          Based in Brasil
-        </span>
-      </h1>
-      <a href="#about-me" class="about-me-link">
-        <button class="more-about-me-button">
-          More about me
-        </button>
-      </a>
-    </section>
 
+    <section class="full-width aurora" id="home">
+      <div class="content hero">
+        <h1>
+          I'm <span class="attention my-name">
+            Bruno H. Poiano <i class="fa-duotone fa-gauge-min"></i>
+          </span>
+          <br>
+          A Full-stack Web Developer
+          <br>
+          <span class="secondary">
+            Based in Brasil
+          </span>
+        </h1>
+        <a href="#about-me" class="about-me-link">
+          <button class="more-about-me-button">
+            More about me
+          </button>
+        </a>
+      </div>
+    </section>
+    <!-- <section class="center" >
+      <div class="color-pallete">
+
+      </div>
+    </section> -->
     <div class="naviogation-mobile">
       <input id="mobile-toggle" type="checkbox"></input>
 
@@ -51,7 +58,6 @@
         </div>
       </div>
     </div>
-
 
     <nav class="full-width navigation">
       <div class="content">
@@ -74,12 +80,13 @@
         </div>
       </div>
     </nav>
+
     <section class="full-width about-me" id="about-me">
       <div class="center">
         <h2>
           Get to know me
         </h2>
-        <div class="description">
+        <div class="description ">
           <h2>
             Greetings! I'm Bruno H. Poiano.
           </h2>
@@ -125,31 +132,13 @@
     </section>
 
     <section class="full-width skills" id="skills" data-background="false" data-skill-wave="true">
-      <div class="box"></div>
       <div class="center">
 
         <h2>
           Skills
         </h2>
         <div class="skill-cards">
-          <div class="ability-card" style="--percentage: 80%">
-            <i class="fa-brands fa-php"></i>
-            <h3>
-              Php
-            </h3>
-            <p>
-              80%
-            </p>
-          </div>
-          <div class="ability-card" style="--percentage: 80%">
-            <i class="fa-brands fa-laravel"></i>
-            <h3>
-              Laravel
-            </h3>
-            <p>
-              80%
-            </p>
-          </div>
+
           <div class="ability-card" style="--percentage: 90%">
             <i class="fa-brands fa-html5"></i>
             <h3>
@@ -190,6 +179,43 @@
               80%
             </p>
           </div>
+          <div class="ability-card" style="--percentage: 20%">
+            <i class="fa-brands fa-react"></i>
+            <h3>
+              React
+            </h3>
+            <p>
+              20%
+            </p>
+          </div>
+          <div class="ability-card" style="--percentage: 80%">
+            <i class="fa-brands fa-php"></i>
+            <h3>
+              Php
+            </h3>
+            <p>
+              80%
+            </p>
+          </div>
+          <div class="ability-card" style="--percentage: 80%">
+            <i class="fa-brands fa-laravel"></i>
+            <h3>
+              Laravel
+            </h3>
+            <p>
+              80%
+            </p>
+          </div>
+          <div class="ability-card" style="--percentage: 40%">
+            <i class="fa-brands fa-docker"></i>
+            <h3>
+              Docker
+            </h3>
+            <p>
+              40%
+            </p>
+          </div>
+
           <div class="ability-card" style="--percentage: 70%">
             <i class="fa-solid fa-database"></i>
             <h3>
@@ -208,15 +234,7 @@
               90%
             </p>
           </div>
-          <div class="ability-card" style="--percentage: 40%">
-            <i class="fa-brands fa-docker"></i>
-            <h3>
-              Docker
-            </h3>
-            <p>
-              40%
-            </p>
-          </div>
+
           <div class="ability-card" style="--percentage: 20%">
             <i class="fa-brands fa-linux"></i>
             <h3>
@@ -230,7 +248,7 @@
       </div>
     </section>
 
-    <section class="full-width wave-wrapper" data-contact-wave="true"invert="true" >
+    <section class="full-width wave-wrapper" data-contact-wave="true" invert="true">
       <div class="wave-border" invert="true">
         <div class="desktop">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -239,10 +257,11 @@
               class="shape-fill"></path>
           </svg>
         </div>
-        <div class="mobile" >
+        <div class="mobile">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
-        </svg>
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+              class="shape-fill"></path>
+          </svg>
         </div>
       </div>
 
@@ -300,11 +319,7 @@
         2024 by Bruno H. Poiano
       </small>
     </footer>
-    <!-- <section class="center" id="contact">
-      <div class="color-pallete">
 
-      </div>
-    </section> -->
   </main>
 </body>
 

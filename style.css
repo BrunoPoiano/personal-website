@@ -408,11 +408,13 @@ img {
 .hero {
   display: grid;
   place-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
   min-height: 100vh;
 
+  grid-template-rows: 4fr 1fr;
+
   & h1 {
-    animation: 2s enterLeft ease-out forwards;
+    animation: 2000ms enterLeft ease-out forwards;
 
     --font-size: var(--font-size-xxxl);
     font-size: var(--font-size);
@@ -422,29 +424,40 @@ img {
 
     place-self: center;
     width: 100%;
+
+    margin: 0;
   }
 
+  & .more-about-me-button {
+    color: var(--neutral-color-10);
+    background: var(--attention-color-30);
+    width: fit-content;
+    padding: 1em 1.5em;
+
+    font-size: var(--font-size-base);
+    font-weight: bold;
+
+    border-radius: var(--border-radius);
+    border: none;
+
+    cursor: pointer;
+    transition: transform 500ms ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
 }
 
-.more-about-me-button {
-  color: var(--neutral-color-10);
-  background: var(--attention-color-30);
-  width: fit-content;
-  padding: 1em 1.5em;
+.aurora {
+  background:
+    radial-gradient(at top left, var(--accent-color-70), transparent),
+    radial-gradient(at top right, var(--attention-color-70), transparent),
+    radial-gradient(at bottom left, var(--neutral-color-95), transparent);
 
-  font-size: var(--font-size-base);
-  font-weight: bold;
+  margin-bottom: 0;
 
-  border-radius: var(--border-radius);
-  border: none;
-
-  cursor: pointer;
-  transition: transform 500ms ease;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-  }
 }
 
 .about-me-link {
@@ -459,6 +472,7 @@ img {
   background-color: var(--about-me-background);
 
   & .description {
+
     & h2 {
       font-size: var(--font-size-lg);
       color: var(--attention-soft-color-20);
@@ -476,7 +490,6 @@ img {
   &[data-skill-wave='true'] {
     margin: 0;
   }
-
 
   background-color: var(--skills-background);
 
@@ -496,6 +509,11 @@ img {
 
 
     & .ability-card {
+
+      animation: fadeOut linear forwards;
+      animation-timeline: view();
+      animation-range: exit -100px;
+
       cursor: pointer;
       background-color: var(--neutral-color-95);
       max-width: 179px;
@@ -854,38 +872,54 @@ img {
   }
 }
 
-/* Keyframa animations */
-
-@keyframes enterLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(80%);
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  80%,
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
+.fade-out {
+  animation: fadeOut linear forwards;
+  animation-timeline: view();
+  animation-range: exit -100px;
 }
 
-@keyframes enterBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(80%);
+
+/* Keyframa animations */
+@media(prefers-reduced-motion: no-preference) {
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+
   }
 
-  20% {
-    opacity: 0;
+  @keyframes enterLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(80%);
+    }
+
+    20% {
+      opacity: 0;
+    }
+
+    80%,
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
   }
 
-  80%,
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
+  @keyframes enterBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+
+    20% {
+      opacity: 0;
+    }
+
+    80%,
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
   }
 }
