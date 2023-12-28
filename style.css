@@ -472,11 +472,40 @@ img {
   background-color: var(--about-me-background);
 
   & .description {
+    & span {
+      color: hsl(0 0% 100% / 0.2);
+
+      background-repeat: no-repeat;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-size: 0% 100%;
+
+      animation: about-me-text-reveal linear forwards;
+      animation-timeline: view(y);
+    }
 
     & h2 {
       font-size: var(--font-size-lg);
-      color: var(--attention-soft-color-20);
+
+      & span {
+        background-image: linear-gradient(90deg, var(--attention-soft-color-20), var(--attention-soft-color-20));
+        animation-range-start: cover 10vh;
+        animation-range-end: cover 30vh;
+      }
     }
+
+    & p span {
+      background-image: linear-gradient(90deg, var(--neutral-color-10), var(--neutral-color-10));
+
+      animation-range-start: cover 23.5vh;
+      animation-range-end: cover 70vh;
+    }
+  }
+}
+
+@keyframes about-me-text-reveal {
+  to {
+    background-size: 100% 100%;
   }
 
 }
@@ -746,8 +775,9 @@ img {
       border-radius: 100%;
       z-index: 1;
       box-shadow: 0 10px 30px 5px var(--base-color);
+      position: relative;
 
-      @media screen and (width < 500px) {
+      @media screen and (width < 633px) {
         display: none;
       }
 
@@ -755,11 +785,35 @@ img {
         transition: all 500ms ease;
         transform: translateY(10%);
 
-
-
         &:hover {
           transform: translateY(0%);
           transform: scale(1.1);
+        }
+      }
+
+      & .eyes {
+        position: absolute;
+        inset: 0;
+
+        & .eye {
+          position: absolute;
+          width: 4rem;
+          aspect-ratio: 1;
+          border: 2px solid black;
+          border-radius: 100%;
+          background: #fff;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 7px;
+            aspect-ratio: 1;
+            background: black;
+            border-radius: 100%;
+
+            left: 45%;
+            top: 7px;
+          }
         }
       }
     }
@@ -830,7 +884,6 @@ img {
       & a:hover::after {
         opacity: 1;
       }
-
     }
   }
 }
@@ -877,7 +930,6 @@ img {
   animation-timeline: view();
   animation-range: exit -100px;
 }
-
 
 /* Keyframa animations */
 @media(prefers-reduced-motion: no-preference) {
