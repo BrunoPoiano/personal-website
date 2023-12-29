@@ -774,7 +774,7 @@ img {
       width: 100%;
       border-radius: 100%;
       z-index: 1;
-      box-shadow: 0 10px 30px 5px var(--base-color);
+      /* box-shadow: 0 10px 30px 5px var(--base-color); */
       position: relative;
 
       @media screen and (width < 633px) {

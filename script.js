@@ -115,8 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             accent.appendChild(colorDiv);
         }
-
-
     }
 })
 
