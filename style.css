@@ -15,9 +15,8 @@
   padding: 0
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+html{
+  hanging-punctuation: first last;
 }
 
 :root {
@@ -345,6 +344,15 @@ section {
   place-items: center;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
 h1 {
   --font-size: var(--font-size-xxl);
   color: var(--neutral-color-10);
@@ -385,6 +393,9 @@ p {
   font-size: var(--font-size);
   line-height: calc(var(--font-size) * 1.3);
   margin-bottom: 0.5em;
+
+  max-width: 75ch;
+  text-wrap: pretty;
 }
 
 a {
@@ -472,7 +483,7 @@ img {
   background-color: var(--about-me-background);
 
   & .description {
-    & span {
+    & .text-reveal {
       color: hsl(0 0% 100% / 0.2);
 
       background-repeat: no-repeat;
@@ -487,28 +498,28 @@ img {
     & h2 {
       font-size: var(--font-size-lg);
 
-      & span {
+      & .text-reveal {
         background-image: linear-gradient(90deg, var(--attention-soft-color-20), var(--attention-soft-color-20));
         animation-range-start: cover 10vh;
         animation-range-end: cover 30vh;
       }
     }
 
-    & p span {
+    & .about-me-text .text-reveal {
       background-image: linear-gradient(90deg, var(--neutral-color-10), var(--neutral-color-10));
 
       animation-range-start: cover 23.5vh;
       animation-range-end: cover 70vh;
+      
+      & span{
+        display: block;
+        height: 0.5em;
+      }
     }
   }
 }
 
-@keyframes about-me-text-reveal {
-  to {
-    background-size: 100% 100%;
-  }
 
-}
 
 .skills {
 
@@ -934,6 +945,11 @@ img {
 /* Keyframa animations */
 @media(prefers-reduced-motion: no-preference) {
 
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
   @keyframes fadeOut {
     to {
       opacity: 0;
@@ -973,5 +989,12 @@ img {
       opacity: 1;
       transform: translateY(0%);
     }
+  }
+
+  @keyframes about-me-text-reveal {
+    to {
+      background-size: 100% 100%;
+    }
+
   }
 }
