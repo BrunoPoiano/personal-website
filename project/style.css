@@ -570,7 +570,10 @@ img {
         background-size: 0% 100%;
 
         animation: about-me-text-reveal linear forwards;
-        animation-timeline: view(y);
+
+        @supports (animation-timeline: view()) {
+          animation-timeline: view(y);
+        }
       }
 
       & h2 {
@@ -578,8 +581,11 @@ img {
 
         & .text-reveal {
           background-image: linear-gradient(90deg, var(--attention-soft-color-20), var(--attention-soft-color-20));
-          animation-range-start: cover 10vh;
-          animation-range-end: cover 30vh;
+
+          @supports (animation-range-start: cover) {
+            animation-range-start: cover 10vh;
+            animation-range-end: cover 30vh;
+          }
         }
       }
 
@@ -628,9 +634,11 @@ img {
 
     & .ability-card {
 
-      animation: fadeOut linear forwards;
-      animation-timeline: view();
-      animation-range: exit -100px;
+      @supports (animation-timeline: view()) {
+        animation: fadeOut linear forwards;
+        animation-timeline: view();
+        animation-range: exit -100px;
+      }
 
       cursor: pointer;
       background-color: var(--neutral-color-95);
@@ -971,9 +979,11 @@ img {
 }
 
 .fade-out {
-  animation: fadeOut linear forwards;
-  animation-timeline: view();
-  animation-range: exit -100px;
+  @supports (animation-timeline: view()) {
+    animation: fadeOut linear forwards;
+    animation-timeline: view();
+    animation-range: exit -100px;
+  }
 }
 
 /* Keyframa animations */
