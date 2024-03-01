@@ -17,6 +17,7 @@
 
 html {
   hanging-punctuation: first last;
+  color-scheme: dark;
 }
 
 :root {
@@ -649,7 +650,7 @@ img {
       border: 2px solid var(--neutral-color-90);
       aspect-ratio: 1;
 
-      transition: transform 200ms ease;
+      transition: all 200ms ease;
 
       position: relative;
       display: flex;
@@ -676,6 +677,7 @@ img {
       &:hover,
       &:focus {
         transform: scale(1.1);
+        box-shadow: 10px 10px 4px 6px var(--base-color);
 
         &:before {
           top: calc(100% - var(--percentage));
