@@ -24,15 +24,6 @@ function angle(cx, cy, ex, ey) {
   return deg;
 }
 
-function copyToClipboard(text) {
-  var dummy = document.createElement("textarea");
-  document.body.appendChild(dummy);
-  dummy.value = text;
-  dummy.select();
-  document.execCommand("copy");
-  document.body.removeChild(dummy);
-}
-
 function isAnchorVisible() {
   const anchorRect = anchor.getBoundingClientRect();
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
