@@ -107,6 +107,12 @@ html {
   --contact-background: var(--neutral-color-80);
 }
 
+body {
+  background-color: var(--neutral-color-95);
+  font-family: var(--font-family);
+  font-size: 1.125rem;
+}
+
 .accent {
   color: var(--accent-color);
 }
@@ -121,12 +127,6 @@ html {
 
 .primary {
   color: var(--neutral-color-10);
-}
-
-body {
-  background-color: var(--neutral-color-95);
-  font-family: var(--font-family);
-  font-size: 1.125rem;
 }
 
 .main-grid,
@@ -415,6 +415,18 @@ img {
   display: block;
   object-fit: contain;
   border-radius: var(--border-radius);
+}
+
+canvas{
+  border: 2px solid var(--neutral-color-60);
+}
+
+button{
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  outline: none;
+  bordeR:none;
+  min-width: 10ch;
 }
 
 .hero {
