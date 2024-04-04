@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="games.js" defer></script>
+  </head>
+  <body>
+    <main class="game-section">
+      <div >
+        <h5>
+          Want to play a game?
+        </h5>
+        <div class="game-list">
+          <ul>
+            <li>
+              <button id="snakeGame">
+                snake
+              </button>
+            </li>
+            <li>
+              <button id="anotherGame">
+                Outro
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="game-boy">
+        <p>Points: <span id="variableValue"></span></p>
+        <div class="shell">
+          <div class="screen-border" id="canva-section">
+            <canvas id="game-canvas" width="160" height="144"></canvas>
+          </div>
+          <div class="logo">
+            <h3 class="attention">
+              Game Boy
+            </h3>
+          </div>
+          <div class="game-pad">
+            <div class="top-buttons">
+              <div class="joypad">
+              </div>
+              <div class="action-buttons">
+                <div class="buttons">B</div>
+                <div class="buttons">A</div>
+              </div>
+            </div>
+            <div class="start-select">
+              <div class="buttons"></div>
+              <div class="buttons"></div>
+            </div>
+          </div>
+          <div class="speaker">
+            <div class="speaker-grill"></div>
+            <div class="speaker-grill"></div>
+            <div class="speaker-grill"></div>
+            <div class="speaker-grill"></div>
+            <div class="speaker-grill"></div>
+            <div class="speaker-grill"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
