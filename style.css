@@ -761,6 +761,39 @@ button{
   }
 }
 
+.games{
+  background-color: var(--skills-background);
+  margin-bottom: 0px;
+
+
+  .games-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button{
+      color: var(--neutral-color-10);
+      background: var(--accent-color-30);
+      width: fit-content;
+      padding: 1em 1.5em;
+  
+      font-size: var(--font-size-base);
+      font-weight: bold;
+  
+      border-radius: var(--border-radius);
+      border: none;
+  
+      cursor: pointer;
+      transition: transform 500ms ease;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
 .blob {
   position: relative;
   background-color: var(--neutral-color-95);

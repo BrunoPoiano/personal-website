@@ -17,11 +17,13 @@ body {
   min-width: 100%;
 }
 
-
 .game-boy {
 
+  --_color: #372ea5;
   --_border-radius: 15px;
   --_border-bottom-right: calc(var(--_border-radius) * 3);
+
+  overflow: hidden;
 
   .shell {
     background-color: #e3e0d3;
@@ -32,6 +34,10 @@ body {
     padding-block-end: 30px;
     border-bottom-right-radius: var(--_border-bottom-right);
 
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
     .screen-border {
       background-color: #6e6769;
       border-radius: var(--_border-radius);
@@ -41,11 +47,19 @@ body {
       padding-block: 25px;
     }
 
+    .logo {
+      width: 100%;
+      h3 {
+      color: var(--_color);
+    }
+  }
+
     .game-pad {
       width: 100%;
+      max-width: 80%;
       display: grid;
       place-items: center;
-      margin-top: 3rem;
+      margin-top: 2rem;
 
       .top-buttons {
         display: grid;
@@ -94,11 +108,22 @@ body {
           rotate: -25deg;
 
           .buttons {
-            width: 40px;
+
+            --_size: 40px;
+            position: relative;
+            width: var(--_size);
             aspect-ratio: 1;
             background-color: #91304c;
-
             border-radius: 100%;
+
+            span {
+              position: absolute;
+              top: 3rem;
+              left: 15px;
+
+              font-weight: bolder;
+              color: var(--_color);
+            }
           }
         }
       }
@@ -106,7 +131,7 @@ body {
       .start-select {
         width: inherit;
         display: flex;
-        gap: 5px;
+        gap: 15px;
         justify-content: center;
 
         min-height: 40px;
@@ -114,25 +139,36 @@ body {
         margin-top: 2rem;
 
         .buttons {
+          position: relative;
 
           rotate: -25deg;
-          width: 40px;
-          height: 10px;
+          width: 50px;
+          height: 13px;
           background-color: #a19791;
 
           border-radius: 5px;
+
+          span {
+
+            position: absolute;
+            top: .75rem;
+
+            font-size: 1rem;
+            font-weight: bolder;
+            color: var(--_color);
+          }
         }
       }
     }
 
     .speaker {
-      width: inherit;
+      width: 100%;
       justify-content: flex-end;
       display: flex;
       gap: 10px;
       position: relative;
-      top: 35px;
-      right: -5px;
+      top: 100px;
+      right: -20px;
 
       rotate: -25deg;
 
