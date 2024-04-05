@@ -1,5 +1,5 @@
-const canva_width = 160;
-const canva_height = 144;
+const canva_width = 160 * 3;
+const canva_height = 144 * 3;
 
 function snakeGameHandler() {
   deleteCanvas()

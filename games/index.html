@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games</title>
+    <title>Full-stack Web Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../style.css">
     <script src="games.js" defer></script>
   </head>
   <body>
     <main class="game-section">
-      <div >
-        <h5>
+      <div>
+        <h3>
           Want to play a game?
-        </h5>
+        </h3>
         <div class="game-list">
           <ul>
             <li>
@@ -26,17 +26,19 @@
                 Outro
               </button>
             </li>
+            <p>Points: <span id="variableValue"></span></p>
+
           </ul>
         </div>
       </div>
-      <div class="game-boy">
-        <p>Points: <span id="variableValue"></span></p>
+      <div class="game-boy" style="--scale: 2">
         <div class="shell">
           <div class="screen-border" id="canva-section">
-            <canvas id="game-canvas" width="160" height="144"></canvas>
+            <canvas id="game-canvas" width="500" height="452"></canvas>
           </div>
+
           <div class="logo">
-            <h3 class="attention">
+            <h3>
               Game Boy
             </h3>
           </div>
@@ -45,13 +47,21 @@
               <div class="joypad">
               </div>
               <div class="action-buttons">
-                <div class="buttons">B</div>
-                <div class="buttons">A</div>
+                <div class="buttons">
+                  <span>B</span>
+                </div>
+                <div class="buttons">
+                  <span>A</span>
+                </div>
               </div>
             </div>
             <div class="start-select">
-              <div class="buttons"></div>
-              <div class="buttons"></div>
+              <div class="buttons">
+                <span>SELECT</span>
+              </div>
+              <div class="buttons">
+                <span>START</span>
+              </div>
             </div>
           </div>
           <div class="speaker">
@@ -62,6 +72,7 @@
             <div class="speaker-grill"></div>
             <div class="speaker-grill"></div>
           </div>
+
         </div>
       </div>
     </main>
