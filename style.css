@@ -419,6 +419,7 @@ img {
 
 canvas{
   border: 2px solid var(--neutral-color-60);
+  background: black;
 }
 
 button{
@@ -922,7 +923,7 @@ button{
       width: inherit;
       display: grid;
       gap: 10px;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       place-items: center;
 
       & a {
