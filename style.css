@@ -42,6 +42,8 @@ html {
   --max-width-screen: 1300px;
   --max-width-content: 950px;
   --primary-color: red;
+  --main-padding: .8em;
+  --background-color: #1c1b22;
 }
 
 body {
@@ -58,7 +60,7 @@ main {
   overflow: auto;
   height: 100%;
 
-  padding: .8em;
+  padding: var(--main-padding);
   border-radius: var(--border-radius);
   border: 3px solid var(--primary-color);
 
@@ -85,13 +87,17 @@ nav {
   z-index: 10;
 
   div {
-    position: absolute;
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     gap: 1.2em;
 
-    background: inherit;
+    padding: 10px 20px;
+    margin-inline: calc(var(--main-padding) * -1);
+    margin-top: calc(var(--main-padding) * -1);
+   
+    background-color: hsl(from var(--background-color) h s l / 70%);
+     backdrop-filter: blur(16px) ;
+    -webkit-backdrop-filter: blur(16px) ;
 
     a {
       font-size: var(--font-size-md);
@@ -102,9 +108,10 @@ nav {
 }
 
 
-@media (width > 1200px) {
+@media (width > 1350px) {
   nav div {
     flex-direction: column;
+    position: absolute;
     background: transparent;
 
     a {
@@ -112,6 +119,13 @@ nav {
     }
   }
 }
+
+@media (width < 450px) {
+  nav {
+    display: none;
+  }
+}
+
 
 h1,
 h2,
@@ -164,6 +178,10 @@ h3 {
   line-height: calc(var(--font-size) * 1.1);
   letter-spacing: -2px;
   margin-bottom: 0.5em;
+}
+
+small {
+    font-size: var(--font-size-sm);
 }
 
 p {
@@ -311,6 +329,8 @@ button {
       display: flex;
       gap: .5em;
       place-items: center;
+      position: relative;
+
 
       .icons {
         display: flex;
@@ -339,6 +359,16 @@ button {
           justify-content: center;
         }
       }
+
+      &:after {
+        content: '5 Years';
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        font-size: var(--font-size-sm);
+        font-weight: 800;
+      }
     }
   }
 }
@@ -354,6 +384,34 @@ button {
     background: #2c3e50;
     transition: width 2s ease 0.4s;
   }
+}
+
+.contact {
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  
+    a{
+      display: grid;
+      place-items:Center;
+
+      font-size: var(--font-size-md);
+
+      color: inherit;
+
+      &:hover{
+    color: hsl(from var(--primary-color) h s l / 70%);
+      }
+    }
+  }
+}
+
+footer{
+  display: grid;
+  place-items:center;
+
+  padding-block: 1em;
 }
 
 
