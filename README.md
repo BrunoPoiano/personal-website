@@ -3,5 +3,6 @@
 ## Project Setup
 
 ```sh
-docker compose up
+npm i 
+npm run serve
 ```
