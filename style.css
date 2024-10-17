@@ -21,11 +21,6 @@ html {
 }
 
 :root {
-  /* main primary color */
-  --base-color: hsl(0, 4%, 15%);
-  --mix-color: rgb(255, 255, 255);
-  --accent-color-pure: oklch(59.22% 0.167 252.34);
-  --attention-color-pure: oklch(58.66% 0.235 28.72);
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -41,7 +36,7 @@ html {
 
   --max-width-screen: 1300px;
   --max-width-content: 950px;
-  --primary-color: red;
+  --primary-color: hsl(360 83% 54%);
   --main-padding: .8em;
   --background-color: #1c1b22;
 }
@@ -66,7 +61,7 @@ main {
 
   display: grid;
   place-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 footer,
@@ -94,10 +89,10 @@ nav {
     padding: 10px 20px;
     margin-inline: calc(var(--main-padding) * -1);
     margin-top: calc(var(--main-padding) * -1);
-   
+
     background-color: hsl(from var(--background-color) h s l / 70%);
-     backdrop-filter: blur(16px) ;
-    -webkit-backdrop-filter: blur(16px) ;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
     a {
       font-size: var(--font-size-md);
@@ -181,7 +176,7 @@ h3 {
 }
 
 small {
-    font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm);
 }
 
 p {
@@ -323,13 +318,59 @@ button {
   .skill-cards {
     display: grid;
     width: 100%;
-    gap: 0.5em;
+    transform-style: preserve-3d;
+    transform: perspective(800px);
+
+
+    &:hover>div {
+      filter: brightness(.3);
+    }
 
     >div {
+
+      transition: 800ms;
+      filter: brightness(1);
+
+      &:hover {
+        filter: brightness(1);
+        transform: translateZ(100px);
+      }
+
+      &:hover+* {
+        filter: brightness(0.8);
+        transform: translateZ(80px) rotateX(-40deg);
+      }
+
+      &:hover+*+* {
+        filter: brightness(0.6);
+        transform: translateZ(60px) rotateX(-20deg);
+      }
+
+      &:hover+*+*+* {
+        filter: brightness(0.4);
+        transform: translateZ(40px) rotateX(-15deg);
+      }
+
+      &:has(+ *:hover) {
+        filter: brightness(0.8);
+        transform: translateZ(80px) rotateX(40deg);
+      }
+
+      &:has(+ *+ *:hover) {
+        filter: brightness(0.6);
+        transform: translateZ(60px) rotateX(20deg);
+      }
+
+      &:has(+ *+ *+ *:hover) {
+        filter: brightness(0.4);
+        transform: translateZ(40px) rotateX(10deg);
+      }
+
       display: flex;
       gap: .5em;
       place-items: center;
       position: relative;
+      padding-bottom: 0.5rem;
 
 
       .icons {
@@ -379,10 +420,26 @@ button {
   background: black;
 
   .progress {
-    width: var(--value, 0);
+    max-width: var(--value, 0);
+
     height: 30px;
-    background: #2c3e50;
+    background: hsl(from var(--primary-color) h s l / 85%);
     transition: width 2s ease 0.4s;
+
+    animation: scroll-progress linear;
+    animation-timeline: view();
+    animation-range: 0px 200px;
+    transform-origin: left;
+  }
+}
+
+@keyframes scroll-progress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
   }
 }
 
@@ -391,25 +448,25 @@ button {
     display: flex;
     justify-content: center;
     gap: 1em;
-  
-    a{
+
+    a {
       display: grid;
-      place-items:Center;
+      place-items: Center;
 
       font-size: var(--font-size-md);
 
       color: inherit;
 
-      &:hover{
-    color: hsl(from var(--primary-color) h s l / 70%);
+      &:hover {
+        color: hsl(from var(--primary-color) h s l / 70%);
       }
     }
   }
 }
 
-footer{
+footer {
   display: grid;
-  place-items:center;
+  place-items: center;
 
   padding-block: 1em;
 }
