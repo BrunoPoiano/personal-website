@@ -17,7 +17,7 @@
 
 html {
   hanging-punctuation: first last;
-  color-scheme: dark;
+  color-scheme: dark light;
 }
 
 :root {
@@ -38,11 +38,16 @@ html {
   --max-width-content: 950px;
   --primary-color: hsl(360 83% 54%);
   --main-padding: .8em;
-  --background-color: #1c1b22;
+  --bg-color: light-dark(#fefefe, #1c1b22);
+  --bg-color-invert: light-dark(#1c1b22, #fefefe);
+
 }
+
+
 
 body {
   font-family: var(--font-family);
+  background: var(--bg-color);
   font-size: 1.125rem;
   height: 100dvh;
   height: 100lvh;
@@ -108,7 +113,6 @@ nav {
       width: 100%;
       padding: 10px 20px;
       flex-direction: row;
-      background-color: hsl(from var(--background-color) h s l / 70%);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
 
@@ -193,6 +197,12 @@ p {
 
 a {
   text-decoration: none;
+
+  color: inherit;
+
+  &:hover {
+    color: hsl(from var(--primary-color) h s l / 70%);
+  }
 }
 
 img {
@@ -209,6 +219,15 @@ button {
   outline: none;
   border: none;
   min-width: 10ch;
+}
+
+& i,
+.ts-icon {
+  & svg {
+    & path {
+      fill: var(--bg-color-invert);
+    }
+  }
 }
 
 
@@ -383,12 +402,6 @@ button {
         aspect-ratio: 1;
         width: var(--_icon-width);
 
-        & svg {
-          & path {
-            fill: white;
-          }
-        }
-
         &::before {
 
           width: 100%;
@@ -432,27 +445,116 @@ button {
 .projects {
 
   .project-list {
-    width: 100%;
-    height: 300px;
     overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    position: relative;
 
     .cards-wrapper {
-      display: inline-flex;
-      animation: scroll 20s linear infinite;
+      width: max-content;
       padding: 20px;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 25px;
+      animation: scroll linear;
+      animation-timeline: scroll(root);
+      &:hover>.card-transition {
+        .cards {
+          opacity: 0.5;
+        }
 
-      .cards{
+        .cards:hover {
+          opacity: 1;
+        }
+      }
+
+      .card-transition {
+        --_-transition: transform 800ms, box-shadow 800ms;
+        position: relative;
         display: grid;
-        width: 200px;
-        height: 250px;
-        margin-right: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        gap: 10px;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          outline: 3px solid var(--bg-color-invert);
+          border-radius: var(--border-radius);
+          z-index: -2;
+          transition: var(--_-transition);
+        }
+
+        .cards {
+    
+          transition: var(--_-transition), opacity 800ms;
+          width: 25rem;
+          display: grid;
+          grid-template-rows: subgrid;
+          grid-row: span 3;
+          border-radius: var(--border-radius);
+          padding: 0.8rem;
+          background: var(--bg-color);
+
+          z-index: 1;
+          outline: 3px solid var(--bg-color-invert);
+
+          h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+
+            div {
+              display: flex;
+              gap: 0.3rem;
+
+              i,
+              .ts-icon {
+
+                font-size: var(--font-size-lg);
+                position: relative;
+                place-self: center;
+                display: flex;
+                aspect-ratio: 1;
+                width: 50px;
+
+                &::before {
+                  width: 100%;
+                  display: flex;
+                  place-self: center;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+
+          a {
+            place-self: end;
+            i {
+              font-size: var(--font-size-lg);
+            }
+          }
+        }
+
+        &:hover {
+          .cards {
+            z-index: 1;
+            transform: translate(-4%, -4%);
+            outline-color: var(--primary-color);
+          }
+
+          &::after {
+            z-index: -1;
+            transform: translate(-2%, -2%);
+            outline-color: var(--primary-color);
+
+          }
+
+          &::before {
+            box-shadow: 4px 5px 10px 5px var(--primary-color);
+            outline-color: var(--primary-color);
+          }
+        }
       }
     }
   }
@@ -461,7 +563,7 @@ button {
 .progress-bar {
   width: 100%;
   height: 30px;
-  background: black;
+  background: var(--bg-color);
   position: relative;
 
   .progress {
@@ -480,16 +582,6 @@ button {
 
 }
 
-@keyframes scroll-progress {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
 .contact {
   div {
     display: flex;
@@ -501,12 +593,6 @@ button {
       place-items: Center;
 
       font-size: var(--font-size-md);
-
-      color: inherit;
-
-      &:hover {
-        color: hsl(from var(--primary-color) h s l / 70%);
-      }
     }
   }
 }
@@ -526,6 +612,22 @@ footer {
   :has(:target) {
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
+  }
+
+  @keyframes scrolling {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-progress {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
   }
 
   @keyframes arrowanimation {
