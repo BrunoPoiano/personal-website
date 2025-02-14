@@ -6,8 +6,20 @@
   animation-duration: 1s;
 }
 
-.title-transition {
-  view-transition-name: title;
+.title-transition-goquest {
+  view-transition-name: title-goquest;
+}
+
+.title-transition-ascii-image-generator {
+  view-transition-name: title-ascii-image-generator;
+}
+
+.title-transition-screen-recorder {
+  view-transition-name: title-screen-recorder;
+}
+
+.title-transition-docker-tui {
+  view-transition-name: title-docker-tui;
 }
 
 /* 
@@ -103,6 +115,7 @@ main {
 }
 
 section {
+  position: relative;
   max-width: var(--max-width-content);
   width: 100%;
 }
@@ -223,11 +236,15 @@ p {
 
 a {
   text-decoration: none;
-
   color: inherit;
 
   &:hover {
     color: hsl(from var(--primary-color) h s l / 70%);
+  }
+
+  &:not(:has(i)) {
+    font-weight: 400;
+    color: hsl(from var(--primary-color) h 50% l);
   }
 }
 
@@ -558,7 +575,7 @@ button {
       animation: scroll linear;
       animation-timeline: scroll(root);
 
-      &:hover>.cards {
+      &:hover>.cards:not(:hover) {
         opacity: 0.5;
       }
 
@@ -567,7 +584,7 @@ button {
       }
 
       .cards {
-        transition: var(--_-transition), opacity 800ms;
+        transition: opacity 500ms;
         width: 30ch;
         display: grid;
         grid-template-rows: subgrid;
@@ -582,7 +599,7 @@ button {
         h3 {
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          align-items: start;
           gap: 0.8rem;
           margin: 0;
 
@@ -610,7 +627,7 @@ button {
         }
 
         a {
-          place-self: end;
+          place-self: start;
 
           i {
             font-size: var(--font-size-lg);
