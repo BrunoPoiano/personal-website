@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  ///////////////////////transitions
+  const button = document.querySelector("button");
+  button.addEventListener("click", () => {
+    console.log("clicked");
+    document.startViewTransition(() => {
+      console.log("startViewTransition");
+      // Change the DOM here
+      document.body.classList.toggle("new-state");
+    });
+  });
   ///////////////////////ligh dark theme
   let colorScheme = localStorage.getItem("theme") || "dark";
 
