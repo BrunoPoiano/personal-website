@@ -12,7 +12,7 @@
 *::before {
   box-sizing: border-box;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 html {
@@ -21,6 +21,7 @@ html {
 }
 
 :root {
+  interpolate-size: allow-keywords;
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -31,8 +32,8 @@ html {
   --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
   --border-radius: 10px;
-  --font-family: system-ui, -apple-system, blinkmacsystemfont, 'segoe ui', roboto, oxygen, ubuntu, cantarell, 'open sans', 'helvetica neue', sans-serif;
-
+  --font-family: system-ui, -apple-system, blinkmacsystemfont, "segoe ui",
+    roboto, oxygen, ubuntu, cantarell, "open sans", "helvetica neue", sans-serif;
 
   --max-width-screen: 1300px;
   --max-width-content: 950px;
@@ -40,10 +41,7 @@ html {
   --main-padding: .8em;
   --bg-color: light-dark(#fefefe, #1c1b22);
   --bg-color-invert: light-dark(#1c1b22, #fefefe);
-
 }
-
-
 
 body {
   font-family: var(--font-family);
@@ -54,6 +52,13 @@ body {
 
   padding: 1em;
   height: 100vh;
+}
+
+body> :is(header, footer),
+section,
+main,
+article {
+  container-type: inline-size;
 }
 
 main {
@@ -69,15 +74,12 @@ main {
   gap: 2rem;
 }
 
-
-
 section {
   max-width: var(--max-width-content);
   width: 100%;
 }
 
 nav {
-
   width: 100%;
   position: sticky;
   top: 0;
@@ -86,7 +88,6 @@ nav {
   max-width: calc(var(--max-width-content) + (180px * 2));
 
   div {
-
     display: flex;
     justify-content: flex-end;
     gap: 1.2em;
@@ -101,7 +102,6 @@ nav {
     }
   }
 }
-
 
 @media (width < 1350px) {
   nav {
@@ -128,7 +128,6 @@ nav {
     display: none;
   }
 }
-
 
 h1,
 h2,
@@ -174,7 +173,6 @@ h2 {
 }
 
 h3 {
-
   --font-size: var(--font-size-lg);
   font-size: var(--font-size);
   font-weight: 400;
@@ -230,8 +228,9 @@ button {
   }
 }
 
-
 .hero-section {
+  --_gradient-color: hsl(from var(--primary-color) h s l / 15%);
+
   height: 100vh;
   height: 100dvh;
   height: 100lvh;
@@ -239,11 +238,94 @@ button {
   display: grid;
   place-items: center;
 
+  background: radial-gradient(circle,
+      var(--_gradient-color) 0%,
+      var(--bg-color) 50%);
+
+  #mode-toggle {
+    border: none;
+    background: transparent;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+
+    position: absolute;
+    width: 100px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    #sun,
+    #moon {
+      position: absolute;
+
+      svg {
+        transition: transform 2s linear(0,
+            0.013 0.6%,
+            0.05 1.2%,
+            0.199 2.5%,
+            0.395 3.7%,
+            0.948 6.7%,
+            1.201 8.4%,
+            1.289 9.2%,
+            1.354 10%,
+            1.396 10.8%,
+            1.416 11.6%,
+            1.418 12.2%,
+            1.405 12.9%,
+            1.345 14.3%,
+            1.258 15.6%,
+            1.012 18.8%,
+            0.909 20.5%,
+            0.851 22%,
+            0.826 23.6%,
+            0.83 24.8%,
+            0.854 26.2%,
+            0.996 30.8%,
+            1.039 32.5%,
+            1.063 34%,
+            1.073 35.5%,
+            1.061 38.2%,
+            0.984 44.4%,
+            0.97 47.4%,
+            0.973 49.8%,
+            1.004 55.8%,
+            1.013 59.2%,
+            0.995 71%,
+            1.002 82.8%,
+            1);
+      }
+    }
+
+    #sun {
+      svg path {
+        stroke: #feff94;
+        filter: drop-shadow(0px 0px 3px yellow);
+      }
+
+      &[data-visible="false"] svg {
+        transform: translateX(-75px);
+      }
+    }
+
+    #moon {
+      svg path {
+        stroke: #505050;
+        filter: drop-shadow(0px 0px 1px black);
+      }
+
+      &[data-visible="false"] svg {
+        transform: translateX(75px);
+      }
+    }
+  }
+
   h1 {
     text-align: right;
 
     span {
-      color: var(--primary-color)
+      color: var(--primary-color);
     }
   }
 
@@ -263,7 +345,6 @@ button {
       font-weight: 800;
       font-size: 30px;
       animation: arrowanimation 1300ms infinite;
-
     }
   }
 }
@@ -277,9 +358,7 @@ button {
     place-items: Center;
     gap: 1rem;
 
-
     .contact-picture {
-
       overflow: clip;
       max-width: 300px;
       width: 100%;
@@ -331,9 +410,7 @@ button {
   }
 }
 
-
 .skills {
-
   .skill-cards {
     display: grid;
     width: 100%;
@@ -342,11 +419,10 @@ button {
     margin-bottom: 0.8rem;
 
     &:hover>div {
-      filter: brightness(.3);
+      filter: brightness(0.3);
     }
 
     >div {
-
       --_gap: .5rem;
       --_icon-width: 50px;
       display: flex;
@@ -383,12 +459,12 @@ button {
         transform: translateZ(80px) rotateX(40deg);
       }
 
-      &:has(+ *+ *:hover) {
+      &:has(+ * + *:hover) {
         filter: brightness(0.6);
         transform: translateZ(60px) rotateX(20deg);
       }
 
-      &:has(+ *+ *+ *:hover) {
+      &:has(+ * + * + *:hover) {
         filter: brightness(0.4);
         transform: translateZ(40px) rotateX(10deg);
       }
@@ -403,7 +479,6 @@ button {
         width: var(--_icon-width);
 
         &::before {
-
           width: 100%;
           display: flex;
           place-self: center;
@@ -412,7 +487,7 @@ button {
       }
 
       &:after {
-        content: '5 Years';
+        content: "5 Years";
         position: absolute;
         right: 0;
         top: 0;
@@ -422,7 +497,7 @@ button {
       }
 
       &::before {
-        content: '';
+        content: "";
         transition: opacity 0.4s ease-in-out;
         opacity: 0;
       }
@@ -437,13 +512,11 @@ button {
         z-index: 2;
         opacity: 1;
       }
-
     }
   }
 }
 
 .projects {
-
   .project-list {
     overflow-x: auto;
 
@@ -455,6 +528,7 @@ button {
       gap: 25px;
       animation: scroll linear;
       animation-timeline: scroll(root);
+
       &:hover>.card-transition {
         .cards {
           opacity: 0.5;
@@ -475,7 +549,7 @@ button {
 
         &::before,
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           inset: 0;
           outline: 3px solid var(--bg-color-invert);
@@ -485,7 +559,6 @@ button {
         }
 
         .cards {
-    
           transition: var(--_-transition), opacity 800ms;
           width: 25rem;
           display: grid;
@@ -510,7 +583,6 @@ button {
 
               i,
               .ts-icon {
-
                 font-size: var(--font-size-lg);
                 position: relative;
                 place-self: center;
@@ -530,6 +602,7 @@ button {
 
           a {
             place-self: end;
+
             i {
               font-size: var(--font-size-lg);
             }
@@ -547,7 +620,6 @@ button {
             z-index: -1;
             transform: translate(-2%, -2%);
             outline-color: var(--primary-color);
-
           }
 
           &::before {
@@ -563,7 +635,6 @@ button {
 .progress-bar {
   width: 100%;
   height: 30px;
-  background: var(--bg-color);
   position: relative;
 
   .progress {
@@ -578,8 +649,6 @@ button {
     animation-range: 0px 200px;
     transform-origin: left;
   }
-
-
 }
 
 .contact {
@@ -604,11 +673,8 @@ footer {
   padding-block: 1em;
 }
 
-
-
 /* Keyframa animations */
-@media(prefers-reduced-motion: no-preference) {
-
+@media (prefers-reduced-motion: no-preference) {
   :has(:target) {
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
@@ -637,7 +703,6 @@ footer {
 
     to {
       transform: translate(0px, 50px);
-
     }
   }
 }
