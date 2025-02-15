@@ -1,323 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full-stack Web Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/colorScheme.js" defer></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full-stack Web Developer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="scripts/script.js" defer></script>
-  <script src="scripts/colorScheme.js" defer></script>
-</head>
+    <script type="speculationrules">
+      {
+        "prerender": [
+          {
+            "urls": [
+              "/",
+              "/projects/asciigenerator.html",
+              "/projects/docker-tui.html",
+              "/projects/goquest.html",
+              "/projects/ollama-webui.html",
+              "/projects/personal-website.html",
+              "/projects/screen-recorder.html"
+            ],
+            "eagerness": "moderate"
+          }
+        ]
+      }
+    </script>
+  </head>
 
-<body>
-  <main class="">
-    <section class="hero-section" id="home">
-      <button id="mode-toggle">
-        <span id="sun" data-active="false">
-          <svg width="40" height="40" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13.0003 2.73726V1.97705M13.0003 24.0231V23.2629M23.2632 13.0001H24.0234M1.97729 13.0001H2.73751M20.2579 5.74327L20.7955 5.20572M5.20516 20.7945L5.74271 20.257M20.2579 20.2569L20.7955 20.7945M5.20516 5.20566L5.74271 5.74321M19.0672 12.9585C19.0672 16.3173 16.3443 19.0402 12.9855 19.0402C9.62667 19.0402 6.90381 16.3173 6.90381 12.9585C6.90381 9.5997 9.62667 6.87684 12.9855 6.87684C16.3443 6.87684 19.0672 9.5997 19.0672 12.9585Z"
-              stroke="black" stroke-width="2" stroke-linecap="round" />
-          </svg>
-
-        </span>
-
-        <span id="moon" data-active="true">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M18.9001 11.7003V8.70034M18.9001 8.70034V5.70034M18.9001 8.70034L21.9001 8.70034M18.9001 8.70034H15.9001M14.1001 5.70034V3.90034M14.1001 3.90034V2.10034M14.1001 3.90034L15.9001 3.90034M14.1001 3.90034L12.3001 3.90034M21.3 14.9398C20.3977 15.2134 19.4404 15.3605 18.4488 15.3605C13.0308 15.3605 8.63863 10.9684 8.63863 5.55037C8.63863 4.55915 8.78564 3.60227 9.05904 2.70034C5.03161 3.92172 2.1001 7.66338 2.1001 12.0897C2.1001 17.5077 6.49226 21.8999 11.9103 21.8999C16.337 21.8999 20.079 18.9678 21.3 14.9398Z"
-              stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </span>
-      </button>
-      <h1>
-        I'm
-        <span class="">
-          Bruno H. Poiano
-        </span>
-        <br>
-        A Full-stack Web Developer
-        <br>
-        Based in Brasil
-      </h1>
-      <a href="#about-me" class="">
-        <button class="more-about-me">
-          More About Me
-          <i class="fa-solid fa-arrow-down"></i>
-        </button>
-      </a>
-    </section>
-
-    <nav class="">
-      <div>
-        <a href="#home"> Home</a>
-        <a href="#about-me"> About me</a>
-        <a href="#skills"> Skills</a>
-        <a href="#projects"> Projects</a>
-        <a href="#contact"> Contact</a>
-      </div>
-    </nav>
-
-    <section class=" about-me" id="about-me">
-      <h2>
-        Who's this guy?
-      </h2>
-      <div class="content">
-        <div class="contact-picture">
-          <img id="anchor" src="me.png" alt="picture of me">
-          <div class="eyes">
-            <div class="eye" style="top: 185px; left: 78px"></div>
-            <div class="eye" style="top: 184px; right: 82px"></div>
-          </div>
-        </div>
-        <div class="description ">
-          <h3>
-            <span class="text-reveal">
-              Greetings! I'm Bruno H. Poiano.
-            </span>
-          </h3>
-          <div class="">
-            <p>
-              I am a Brasilian Full-Stack Web Developer and for almost 5 years I've been working in innovative
-              products and services for the commerce sector, including ERP systems.
-            </p>
-            <p>
-              Over the course of my career, I've actively engaged in every facet of the development life cycle, from
-              resolving bugs to implementing valuable enhancements based on user experience and client feedback.
-            </p>
-            <p>
-              Driven by a passion for crafting user-friendly solutions and thriving in agile environments, I am always
-              on the lookout for new opportunities and collaborations. If you have any professional inquiries or
-              potential projects, I invite you to connect with me.
-            </p>
-            <p>
-              Whether you're a business owner embarking on a web development project, a fellow developer interested in
-              a collaboration or just wanting to say hi, shoot me a message and let's work together!
-            </p>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="skills" id="skills">
-      <h2>
-        Skills
-      </h2>
-
-      <div class="skill-cards">
-        <h3>Programming Languages</h3>
-
-        <div class="">
-          <i class="fa-brands fa-js"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:90%"></div>
-          </div>
-        </div>
-        <div class="">
-          <div class="ts-icon">
-            <svg viewBox="0 0 32 32">
+  <body>
+    <main class="">
+      <section class="hero-section" id="home">
+        <button id="mode-toggle">
+          <span id="sun" data-active="false">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z" />
+                d="M13.0003 2.73726V1.97705M13.0003 24.0231V23.2629M23.2632 13.0001H24.0234M1.97729 13.0001H2.73751M20.2579 5.74327L20.7955 5.20572M5.20516 20.7945L5.74271 20.257M20.2579 20.2569L20.7955 20.7945M5.20516 5.20566L5.74271 5.74321M19.0672 12.9585C19.0672 16.3173 16.3443 19.0402 12.9855 19.0402C9.62667 19.0402 6.90381 16.3173 6.90381 12.9585C6.90381 9.5997 9.62667 6.87684 12.9855 6.87684C16.3443 6.87684 19.0672 9.5997 19.0672 12.9585Z"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
             </svg>
-          </div>
-          <div class="progress-bar">
-            <div class="progress" style="--value:70%"></div>
-          </div>
-        </div>
-        <div>
-          <i class="fa-brands fa-php"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:80%"></div>
-          </div>
-        </div>
-        <div class="">
-          <i class="fa-brands fa-python"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:30%"></div>
-          </div>
-        </div>
-        <div class="">
-          <i class="fa-brands fa-golang"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:30%"></div>
-          </div>
-        </div>
+          </span>
 
-      </div>
-      <div class="skill-cards">
-        <h3>Frameworks and Libraries</h3>
-        <div>
-          <i class="fa-brands fa-vuejs"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:80%"></div>
-          </div>
-        </div>
-        <div>
-          <i class="fa-brands fa-react"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:60%"></div>
-          </div>
-        </div>
-        <div>
-          <i class="fa-brands fa-laravel"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:80%"></div>
-          </div>
-        </div>
-        <div>
-          <i class="fa-brands fa-node"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:40%"></div>
-          </div>
-        </div>
-      </div>
-      <div class="skill-cards">
-        <h3>Tools and Platforms</h3>
-        <div>
-          <i class="fa-brands fa-docker"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:50%"></div>
-          </div>
-        </div>
-        <div>
-          <i class="fa-brands fa-github"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:90%"></div>
-          </div>
-        </div>
-        <div data-message="I use Arch btw 😉">
-          <i class="fa-brands fa-linux"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:30%"></div>
-          </div>
-        </div>
-      </div>
-      <div class="skill-cards">
-        <h3>Other</h3>
-        <div class="">
-          <div class="icons">
-            <i class="fa-brands fa-html5"></i>
-          </div>
-          <div class="progress-bar">
-            <div class="progress" style="--value:100%"></div>
-          </div>
-        </div>
-        <div class="">
-          <div class="icons">
-            <i class="fa-brands fa-css3-alt"></i>
-          </div>
-          <div class="progress-bar">
-            <div class="progress" style="--value:100%"></div>
-          </div>
-        </div>
-        <div>
-          <i class="fa-solid fa-database"></i>
-          <div class="progress-bar">
-            <div class="progress" style="--value:75%"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <h2>What I've been working on</h2>
-
-      <div class="project-list">
-        <div class="cards-wrapper" id="projects-wrapper">
-
-          <div class="cards">
-            <h3>
-              <a class="title-transition-goquest" href="projects/goquest.html">
-                GOquest
-              </a>
-              <a href="https://github.com/BrunoPoiano/goquest"> <i class="fa-brands fa-github"></i></a>
-            </h3>
-            <p>A API Client tool for designing and testings REST, WebSockets and HTTP compatible protocols direct on the
-              terminal.</p>
-          </div>
-
-          <div class="cards">
-            <h3>
-              <a class="title-transition-ascii-image-generator" href="projects/asciigenerator.html">
-                ASCII Image Generator
-              </a>
-              <a href="https://github.com/BrunoPoiano/ascii-image-generator"> <i class="fa-brands fa-github"></i></a>
-            </h3>
-            <p>Convert images into ASCII art using a web interface.</p>
-          </div>
-
-          <div class="cards">
-            <h3>
-              <a class="title-transition-screen-recorder" href="projects/screen-recorder.html">
-                Screen Recorder
-              </a>
-              <a href="https://github.com/BrunoPoiano/screen-recorder"> <i class="fa-brands fa-github"></i></a>
-            </h3>
-            <p>Simple screen recorder app built with React and Electron.</p>
-          </div>
-
-          <div class="cards">
-            <h3>
-              <a class="title-transition-docker-tui" href="projects/docker-tui.html">
-                Docker-tui
-              </a>
-              <a href="https://github.com/BrunoPoiano/docker-tui"> <i class="fa-brands fa-github"></i></a>
-            </h3>
-            <p>A terminal user interface to interact with docker containers</p>
-          </div>
-
-          <div class="cards">
-            <h3>
-              <a class="title-transition-ollama-webui" href="projects/ollama-webui.html">
-                Ollama Webui
-              </a>
-              <a href="https://github.com/BrunoPoiano/ollama-webui"> <i class="fa-brands fa-github"></i></a>
-            </h3>
-            <p>WebUi to interact with Local LLM ollama</p>
-          </div>
-
-          <div class="cards">
-            <h3>
-              <a class="title-transition-personal-website" href="projects/personal-website.html">
-                This Page
-              </a>
-              <a href="https://github.com/BrunoPoiano/Personal-Website"> <i class="fa-brands fa-github"></i></a>
-            </h3>
-            <p>Personal website - In construction</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="contact" id="contact">
-      <h2>
-        Let's have a chat
-      </h2>
-      <div class="">
-        <a href="https://www.linkedin.com/in/brunopoiano/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-          <p>Linkedin</p>
+          <span id="moon" data-active="true">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.9001 11.7003V8.70034M18.9001 8.70034V5.70034M18.9001 8.70034L21.9001 8.70034M18.9001 8.70034H15.9001M14.1001 5.70034V3.90034M14.1001 3.90034V2.10034M14.1001 3.90034L15.9001 3.90034M14.1001 3.90034L12.3001 3.90034M21.3 14.9398C20.3977 15.2134 19.4404 15.3605 18.4488 15.3605C13.0308 15.3605 8.63863 10.9684 8.63863 5.55037C8.63863 4.55915 8.78564 3.60227 9.05904 2.70034C5.03161 3.92172 2.1001 7.66338 2.1001 12.0897C2.1001 17.5077 6.49226 21.8999 11.9103 21.8999C16.337 21.8999 20.079 18.9678 21.3 14.9398Z"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <h1>
+          I'm
+          <span class=""> Bruno H. Poiano </span>
+          <br />
+          A Full-stack Web Developer
+          <br />
+          Based in Brasil
+        </h1>
+        <a href="#about-me" class="">
+          <button class="more-about-me">
+            More About Me
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
         </a>
-        <a href="https://github.com/BrunoPoiano" target="_blank">
-          <i class="fa-brands fa-github"></i>
-          <p>
-            GitHub
-          </p>
-        </a>
-      </div>
-    </section>
+      </section>
 
-    <footer class=" ">
-      <small class="">
-        &copy; Copyright
-        2025 by Bruno H. Poiano
-      </small>
-    </footer>
+      <nav class="">
+        <div>
+          <a href="#home"> Home</a>
+          <a href="#about-me"> About me</a>
+          <a href="#skills"> Skills</a>
+          <a href="#projects"> Projects</a>
+          <a href="#contact"> Contact</a>
+        </div>
+      </nav>
 
-  </main>
-</body>
+      <section class="about-me" id="about-me">
+        <h2>Who's this guy?</h2>
+        <div class="content">
+          <div class="contact-picture">
+            <img id="anchor" src="me.png" alt="picture of me" />
+            <div class="eyes">
+              <div class="eye" style="top: 185px; left: 78px"></div>
+              <div class="eye" style="top: 184px; right: 82px"></div>
+            </div>
+          </div>
+          <div class="description">
+            <h3>
+              <span class="text-reveal"> Greetings! I'm Bruno H. Poiano. </span>
+            </h3>
+            <div class="">
+              <p>
+                I am a Brasilian Full-Stack Web Developer and for almost 5 years
+                I've been working in innovative products and services for the
+                commerce sector, including ERP systems.
+              </p>
+              <p>
+                Over the course of my career, I've actively engaged in every
+                facet of the development life cycle, from resolving bugs to
+                implementing valuable enhancements based on user experience and
+                client feedback.
+              </p>
+              <p>
+                Driven by a passion for crafting user-friendly solutions and
+                thriving in agile environments, I am always on the lookout for
+                new opportunities and collaborations. If you have any
+                professional inquiries or potential projects, I invite you to
+                connect with me.
+              </p>
+              <p>
+                Whether you're a business owner embarking on a web development
+                project, a fellow developer interested in a collaboration or
+                just wanting to say hi, shoot me a message and let's work
+                together!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="skills" id="skills">
+        <h2>Skills</h2>
+
+        <div class="skill-cards">
+          <h3>Programming Languages</h3>
+
+          <div class="">
+            <i class="fa-brands fa-js"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 90%"></div>
+            </div>
+          </div>
+          <div class="">
+            <div class="ts-icon">
+              <svg viewBox="0 0 32 32">
+                <path
+                  d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z"
+                />
+              </svg>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 70%"></div>
+            </div>
+          </div>
+          <div>
+            <i class="fa-brands fa-php"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 80%"></div>
+            </div>
+          </div>
+          <div class="">
+            <i class="fa-brands fa-python"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 30%"></div>
+            </div>
+          </div>
+          <div class="">
+            <i class="fa-brands fa-golang"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 30%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-cards">
+          <h3>Frameworks and Libraries</h3>
+          <div>
+            <i class="fa-brands fa-vuejs"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 80%"></div>
+            </div>
+          </div>
+          <div>
+            <i class="fa-brands fa-react"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 60%"></div>
+            </div>
+          </div>
+          <div>
+            <i class="fa-brands fa-laravel"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 80%"></div>
+            </div>
+          </div>
+          <div>
+            <i class="fa-brands fa-node"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 40%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-cards">
+          <h3>Tools and Platforms</h3>
+          <div>
+            <i class="fa-brands fa-docker"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 50%"></div>
+            </div>
+          </div>
+          <div>
+            <i class="fa-brands fa-github"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 90%"></div>
+            </div>
+          </div>
+          <div data-message="I use Arch btw 😉">
+            <i class="fa-brands fa-linux"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 30%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-cards">
+          <h3>Other</h3>
+          <div class="">
+            <div class="icons">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 100%"></div>
+            </div>
+          </div>
+          <div class="">
+            <div class="icons">
+              <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 100%"></div>
+            </div>
+          </div>
+          <div>
+            <i class="fa-solid fa-database"></i>
+            <div class="progress-bar">
+              <div class="progress" style="--value: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <h2>What I've been working on</h2>
+
+        <div class="project-list">
+          <div class="cards-wrapper" id="projects-wrapper">
+            <div class="cards">
+              <h3>
+                <a
+                  class="title-transition-goquest"
+                  href="projects/goquest.html"
+                >
+                  GOquest
+                </a>
+                <a
+                  href="https://github.com/BrunoPoiano/goquest"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i
+                ></a>
+              </h3>
+              <p>
+                A API Client tool for designing and testings REST, WebSockets
+                and HTTP compatible protocols direct on the terminal.
+              </p>
+            </div>
+
+            <div class="cards">
+              <h3>
+                <a
+                  class="title-transition-ascii-image-generator"
+                  href="projects/asciigenerator.html"
+                >
+                  ASCII Image Generator
+                </a>
+                <a
+                  href="https://github.com/BrunoPoiano/ascii-image-generator"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i
+                ></a>
+              </h3>
+              <p>Convert images into ASCII art using a web interface.</p>
+            </div>
+
+            <div class="cards">
+              <h3>
+                <a
+                  class="title-transition-screen-recorder"
+                  href="projects/screen-recorder.html"
+                >
+                  Screen Recorder
+                </a>
+                <a
+                  href="https://github.com/BrunoPoiano/screen-recorder"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i
+                ></a>
+              </h3>
+              <p>Simple screen recorder app built with React and Electron.</p>
+            </div>
+
+            <div class="cards">
+              <h3>
+                <a
+                  class="title-transition-docker-tui"
+                  href="projects/docker-tui.html"
+                >
+                  Docker-tui
+                </a>
+                <a
+                  href="https://github.com/BrunoPoiano/docker-tui"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i
+                ></a>
+              </h3>
+              <p>
+                A terminal user interface to interact with docker containers
+              </p>
+            </div>
+
+            <div class="cards">
+              <h3>
+                <a
+                  class="title-transition-ollama-webui"
+                  href="projects/ollama-webui.html"
+                >
+                  Ollama Webui
+                </a>
+                <a
+                  href="https://github.com/BrunoPoiano/ollama-webui"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i
+                ></a>
+              </h3>
+              <p>WebUi to interact with Local LLM ollama</p>
+            </div>
+
+            <div class="cards">
+              <h3>
+                <a
+                  class="title-transition-personal-website"
+                  href="projects/personal-website.html"
+                >
+                  This Page
+                </a>
+                <a
+                  href="https://github.com/BrunoPoiano/Personal-Website"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-github"></i
+                ></a>
+              </h3>
+              <p>Personal website - In construction</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <h2>Let's have a chat</h2>
+        <div class="">
+          <a href="https://www.linkedin.com/in/brunopoiano/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            <p>Linkedin</p>
+          </a>
+          <a href="https://github.com/BrunoPoiano" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            <p>GitHub</p>
+          </a>
+        </div>
+      </section>
+
+      <footer class=" ">
+        <small class=""> &copy; Copyright 2025 by Bruno H. Poiano </small>
+      </footer>
+    </main>
+  </body>
 </html>
