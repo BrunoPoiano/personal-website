@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>GOquest</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="../style.css" rel="stylesheet">
   <script src="../scripts/colorScheme.js" defer></script>
@@ -33,41 +33,43 @@
           </span>
         </button>
         <h1>
-          <span class="title-transition-ascii-image-generator">
-            <a href="https://github.com/BrunoPoiano/ascii-image-generator"> <i class="fa-brands fa-github"></i></a>
-            ASCII Image Generator
+          <a href="https://github.com/BrunoPoiano/personal-website"> <i class="fa-brands fa-github"></i></a>
+          <span class="title-transition-ollama-webui">
+            Ollama WebUi
           </span>
-          with Golang & WebAssembly
         </h1>
-        <p>Convert images into ASCII art using a web interface. Built using Go (Golang) and WebAssembly (WASM) to
-          execute in the client's browser, providing a fast and efficient way to generate ASCII art from an image.</p>
-        <p>live version at <a href="https://ascii-image-generator-two.vercel.app/">Demo</a>.</p>
-
-        <img src="https://raw.githubusercontent.com/BrunoPoiano/ascii-image-generator/refs/heads/main/demo.png"
-          alt="demo">
+        <p>WebUi to interact with Local LLM ollama written in Vue.js </p>
       </div>
+      <img alt="Screenshot of the App."
+        src="https://raw.githubusercontent.com/BrunoPoiano/ollama-webui/refs/heads/main/public/demo.png" />
       <div>
         <h2>Install</h2>
         <p>Clone the project</p>
-        <pre><code>git clone git@github.com:BrunoPoiano/ascii-image-generator.git
-            cd ascii-image-generator</code></pre>
-        <h3>To run locally</h3>
-        <p><strong>Install dependencies</strong></p>
-        <pre><code class="language-bash">npm i</code></pre>
-        <p><strong>Start the Server on Port 3000</strong></p>
-        <pre><code class="language-bash">node server.js</code></pre>
-        <h3>Go Code Location</h3>
-        <pre><code class="language-bash">src/go/main.go</code></pre>
-        <p><strong>To compile the Go code into WebAssembly, run:</strong></p>
-        <pre><code class="language-bash">GOOS=js GOARCH=wasm go build -o main.wasm</code></pre>
-        </ div>
         <div>
-
-          <h2>Ref</h2>
-          <ul>
-            <li><a href="https://github.com/anthonynsimon/bild">Bild</a></li>
-          </ul>
+          <pre><code>bash
+              git clone git@github.com:BrunoPoiano/ollama-webui.git</code></pre>
         </div>
+        <p>cd to the directory</p>
+        <div>
+          <pre><code>bash
+              cd ollama-webui</code></pre>
+        </div>
+        <p>Deploy the container</p>
+        <div>
+          <pre><code>bash
+              docker compose up -d</code></pre>
+        </div>
+      </div>
+      <div>
+        <h2>On the browser </h2>
+        <span class="detail">http://localhost:5173/</span>
+      </div>
+      <div>
+        <h2>.env</h2>
+        <p>
+          App expets the port to be <span class="detail">11434</span> if you changed, change the link in the .env
+        </p>
+      </div>
     </section>
   </main>
 </body>

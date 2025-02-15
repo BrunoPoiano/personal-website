@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Docker Tui</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="../style.css" rel="stylesheet">
   <script src="../scripts/colorScheme.js" defer></script>
@@ -32,42 +32,70 @@
             </svg>
           </span>
         </button>
-        <h1>
-          <span class="title-transition-ascii-image-generator">
-            <a href="https://github.com/BrunoPoiano/ascii-image-generator"> <i class="fa-brands fa-github"></i></a>
-            ASCII Image Generator
-          </span>
-          with Golang & WebAssembly
-        </h1>
-        <p>Convert images into ASCII art using a web interface. Built using Go (Golang) and WebAssembly (WASM) to
-          execute in the client's browser, providing a fast and efficient way to generate ASCII art from an image.</p>
-        <p>live version at <a href="https://ascii-image-generator-two.vercel.app/">Demo</a>.</p>
 
-        <img src="https://raw.githubusercontent.com/BrunoPoiano/ascii-image-generator/refs/heads/main/demo.png"
-          alt="demo">
+
+        <h1>
+          <a href="https://github.com/BrunoPoiano/docker-tui"> <i class="fa-brands fa-github"></i></a>
+          <span class="title-transition-docker-tui">
+            Docker-TUI
+          </span>
+        </h1>
+
+        <p>Docker-tui is a simple terminal user interface to interact with docker. Writen in <a
+            href="https://golang.org/">Go</a> and <a href="https://github.com/charmbracelet/bubbletea">Bubbletea</a></p>
+        <img alt="App Screenshot" src="https://raw.githubusercontent.com/BrunoPoiano/docker-tui/refs/heads/main/imgs/docker-tui.png" />
+      </div>
+
+      <div>
+        <h2>Deploy</h2>
+        <p>Clone the project</p>
+        <pre><code>bash
+            git clone https://github.com/BrunoPoiano/docker-tui-go.git</code></pre>
+
+        <p>cd to the directory</p>
+        <pre><code>bash
+            cd docker-tui-go</code></pre>
+        <p>Iniciate a new go module</p>
+        <div>
+          <pre><code>bash
+              go mod init docker-tui</code></pre>
+        </div>
+        <pre><code>bash
+            go mod tidy</code></pre>
+
+        <p>Compile packages and dependencies</p>
+        <div>
+          <pre><code>bash
+              go build .</code></pre>
+        </div>
+        <p>Start the project</p>
+        <pre><code>bash
+            go run .</code></pre>
+      </div>
+
+      <div>
+        <h2>Docker Actions</h2>
+        <p>Easiest way to start, stop and restart containers </p>
+        <img alt="Docker Actions" src="https://raw.githubusercontent.com/BrunoPoiano/docker-tui/refs/heads/main/imgs/menu.gif" />
       </div>
       <div>
-        <h2>Install</h2>
-        <p>Clone the project</p>
-        <pre><code>git clone git@github.com:BrunoPoiano/ascii-image-generator.git
-            cd ascii-image-generator</code></pre>
-        <h3>To run locally</h3>
-        <p><strong>Install dependencies</strong></p>
-        <pre><code class="language-bash">npm i</code></pre>
-        <p><strong>Start the Server on Port 3000</strong></p>
-        <pre><code class="language-bash">node server.js</code></pre>
-        <h3>Go Code Location</h3>
-        <pre><code class="language-bash">src/go/main.go</code></pre>
-        <p><strong>To compile the Go code into WebAssembly, run:</strong></p>
-        <pre><code class="language-bash">GOOS=js GOARCH=wasm go build -o main.wasm</code></pre>
-        </ div>
-        <div>
+        <h2>Containers List</h2>
+        <p>View the paginated logs </p>
+        <img alt="Docker Logs" src="https://raw.githubusercontent.com/BrunoPoiano/docker-tui/refs/heads/main/imgs/list.png" />
+      </div>
+      <div>
+        <h2>Container Logs</h2>
+        <p>View the paginated logs </p>
+        <img alt="Docker Logs" src="https://raw.githubusercontent.com/BrunoPoiano/docker-tui/refs/heads/main/imgs/logs.gif" />
+      </div>
 
-          <h2>Ref</h2>
-          <ul>
-            <li><a href="https://github.com/anthonynsimon/bild">Bild</a></li>
-          </ul>
-        </div>
+      <div>
+        <h2>FAQ</h2>
+        <h3>
+          Shell into containers
+        </h3>
+        <p>Shell functionality is there, it works, but it's still kinda broken. </p>
+      </div>
     </section>
   </main>
 </body>
