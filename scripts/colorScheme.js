@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changeColorTheme = () => {
     localStorage.setItem("theme", colorScheme);
-    moon.setAttribute("data-visible", colorScheme == "light");
-    sun.setAttribute("data-visible", colorScheme == "dark");
+    moon.setAttribute("data-visible", colorScheme === "light");
+    sun.setAttribute("data-visible", colorScheme === "dark");
     document.documentElement.style.setProperty("color-scheme", colorScheme);
   };
 
   modeButton.addEventListener("click", () => {
-    if (colorScheme == "dark") {
+    if (colorScheme === "dark") {
       colorScheme = "light";
     } else {
       colorScheme = "dark";

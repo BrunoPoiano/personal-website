@@ -30,12 +30,12 @@
   view-transition-name: title-personal-website;
 }
 
-/* 
-  header 
+/*
+  header
     line height: 1.1, 1.3
     letter-spacing: -1, -2
-    
-  body text 
+
+  body text
     line height: 1.4, 1.6
 */
 
@@ -64,13 +64,14 @@ html {
   --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
   --border-radius: 10px;
-  --font-family: system-ui, -apple-system, blinkmacsystemfont, "segoe ui",
-    roboto, oxygen, ubuntu, cantarell, "open sans", "helvetica neue", sans-serif;
+  --font-family:
+    system-ui, -apple-system, blinkmacsystemfont, "segoe ui", roboto, oxygen,
+    ubuntu, cantarell, "open sans", "helvetica neue", sans-serif;
 
   --max-width-screen: 1300px;
   --max-width-content: 950px;
   --primary-color: hsl(360 83% 54%);
-  --main-padding: .8em;
+  --main-padding: 0.8em;
   --bg-color: light-dark(#fefefe, #1c1b22);
   --bg-color-invert: light-dark(#1c1b22, #fefefe);
   --dark-color: #1c1b22;
@@ -87,7 +88,7 @@ body {
   height: 100vh;
 }
 
-body> :is(header, footer),
+body > :is(header, footer),
 section,
 main,
 article {
@@ -104,8 +105,8 @@ pre {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   white-space: pre-line;
 }
 
@@ -194,7 +195,7 @@ figcaption {
   max-width: 65ch;
 }
 
-body> :is(header, footer),
+body > :is(header, footer),
 section,
 main,
 article {
@@ -301,7 +302,9 @@ button {
     position: absolute;
 
     svg {
-      transition: transform 2s linear(0,
+      transition: transform 2s
+        linear(
+          0,
           0.013 0.6%,
           0.05 1.2%,
           0.199 2.5%,
@@ -334,7 +337,8 @@ button {
           1.013 59.2%,
           0.995 71%,
           1.002 82.8%,
-          1);
+          1
+        );
     }
   }
 
@@ -365,9 +369,11 @@ button {
   --_gradient-color-light: hsl(from var(--primary-color) h s l / 8%);
   --_gradient-color-dark: hsl(from var(--primary-color) h s l / 15%);
 
-  --_gradient-color: light-dark(var(--_gradient-color-light),
-      var(--_gradient-color-dark));
-  
+  --_gradient-color: light-dark(
+    var(--_gradient-color-light),
+    var(--_gradient-color-dark)
+  );
+
   height: 100vh;
   height: 100dvh;
   height: 100lvh;
@@ -375,12 +381,14 @@ button {
   display: grid;
   place-items: center;
 
-    background: radial-gradient(circle,
-        var(--_gradient-color) 0%,
-        var(--bg-color) 50%);
-    text-align: right;
-  h1 {
+  background: radial-gradient(
+    circle,
+    var(--_gradient-color) 0%,
+    var(--bg-color) 50%
+  );
+  text-align: right;
 
+  h1 {
     span {
       color: var(--primary-color);
     }
@@ -392,7 +400,7 @@ button {
     font-weight: 900;
     overflow: hidden;
 
-    padding: 1em .8em;
+    padding: 1em 0.8em;
 
     display: flex;
     gap: 5px;
@@ -475,12 +483,12 @@ button {
     transform: perspective(800px);
     margin-bottom: 0.8rem;
 
-    &:hover>div {
+    &:hover > div {
       filter: brightness(0.3);
     }
 
-    >div {
-      --_gap: .5rem;
+    > div {
+      --_gap: 0.5rem;
       --_icon-width: 50px;
       display: flex;
       gap: var(--_gap);
@@ -488,7 +496,7 @@ button {
       position: relative;
       margin-top: -0.2rem;
 
-      transition: all 800ms ease;
+      transition: all 600ms linear(0, 0.999 44.8%, 0.866 58.4%, 0.998 77.2%, 1);
       filter: brightness(1);
 
       &:hover {
@@ -496,17 +504,17 @@ button {
         transform: translateZ(100px);
       }
 
-      &:hover+* {
+      &:hover + * {
         filter: brightness(0.8);
         transform: translateZ(80px) rotateX(-40deg);
       }
 
-      &:hover+*+* {
+      &:hover + * + * {
         filter: brightness(0.6);
         transform: translateZ(60px) rotateX(-20deg);
       }
 
-      &:hover+*+*+* {
+      &:hover + * + * + * {
         filter: brightness(0.4);
         transform: translateZ(40px) rotateX(-15deg);
       }
@@ -560,7 +568,7 @@ button {
       }
 
       &:hover::before {
-        left: calc(var(--_gap) + var(--_icon-width) + .2rem);
+        left: calc(var(--_gap) + var(--_icon-width) + 0.2rem);
         content: attr(data-message);
         position: absolute;
         color: inherit;
@@ -575,75 +583,82 @@ button {
 
 .projects {
   .project-list {
-    overflow-x: auto;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
+    gap: 0.8em;
 
-    .cards-wrapper {
-      width: max-content;
-      padding: 20px;
-      display: grid;
-      grid-auto-flow: column;
-      gap: .8em;
-      animation: scroll linear;
-      animation-timeline: scroll(root);
+    &:hover > .card:not(:hover) {
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
 
-      &:hover>.cards:not(:hover) {
-        opacity: 0.5;
+    .card:hover {
+      opacity: 1;
+      scale: 1.3;
+      background: var(--bg-color);
+      z-index: 2;
+    }
+
+    .card {
+      position: relative;
+      min-height: 15rem;
+      perspective: 150rem;
+      transition: all 200ms;
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: 1px solid red;
+        border-radius: 1rem;
+        transition: 800ms
+          linear(
+            0,
+            0.008 1.1%,
+            0.031 2.2%,
+            0.129 4.8%,
+            0.257 7.2%,
+            0.671 14.2%,
+            0.789 16.5%,
+            0.881 18.6%,
+            0.957 20.7%,
+            1.019 22.9%,
+            1.063 25.1%,
+            1.094 27.4%,
+            1.114 30.7%,
+            1.112 34.5%,
+            1.018 49.9%,
+            0.99 59.1%,
+            1
+          );
+        backface-visibility: hidden;
+        overflow: hidden;
+        padding: 1rem;
       }
 
-      .cards:hover {
-        opacity: 1;
+      .card-front {
+        text-align: center;
       }
 
-      .cards {
-        transition: opacity 500ms;
-        width: 30ch;
+      .card-back {
         display: grid;
-        grid-template-rows: subgrid;
-        grid-row: span 2;
-        border-radius: var(--border-radius);
-        padding: 0.8rem;
-        background: var(--bg-color);
+        gap: 1rem;
+        transform: rotateX(180deg);
+      }
 
-        z-index: 1;
-        outline: 3px solid var(--bg-color-invert);
+      &:hover .card-front {
+        transform: rotateX(-180deg);
+      }
 
-        h3 {
-          display: flex;
-          justify-content: space-between;
-          align-items: start;
-          gap: 0.8rem;
-          margin: 0;
-
-          div {
-            display: flex;
-            gap: 0.3rem;
-
-            i,
-            .ts-icon {
-              font-size: var(--font-size-lg);
-              position: relative;
-              place-self: center;
-              display: flex;
-              aspect-ratio: 1;
-              width: 50px;
-
-              &::before {
-                width: 100%;
-                display: flex;
-                place-self: center;
-                justify-content: center;
-              }
-            }
-          }
-        }
-
-        a {
-          place-self: start;
-
-          i {
-            font-size: var(--font-size-lg);
-          }
-        }
+      &:hover .card-back {
+        transform: rotateX(0deg);
       }
     }
   }
@@ -680,20 +695,6 @@ button {
 
       font-size: var(--font-size-md);
     }
-  }
-}
-
-.project-section {
-  display: grid;
-  gap: 0.8rem;
-
-  place-self: start;
-  justify-self: center;
-
-  .detail {
-    padding: 0.3rem 0.6rem;
-    background: light-dark(#eeefff, #272834);
-    border-radius: 8px;
   }
 }
 
